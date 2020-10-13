@@ -3,7 +3,7 @@ services:
   react:
     build:
       context: . # docker file위치가 어디에 있는지
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     volumes: 

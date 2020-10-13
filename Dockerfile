@@ -1,14 +1,11 @@
-FROM node:alpine as bulider
+FROM node:alpine
 
 WORKDIR /usr/src/app
 
-COPY package.json .
+COPY package.json ./
 
-RUN npm install 
+RUN npm install
 
 COPY ./ ./
 
-RUN npm run build
-
-FROM nginx
-COPY --from=bulider /usr/src/app/build /usr/share/nginx/html
+CMD ["npm", "run", "start"]
