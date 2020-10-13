@@ -7,7 +7,7 @@ services:
 
 before_install:
   - echo "start creating an image"
-  - docker build -t wmc15156/docker-react-app -f Dockerfile.dev
+  - docker build -t wmc15156/docker-react-app -f Dockerfile.dev .
 
 script:
   - docker run -e CI=ture wmc15156/docker-react-app npm run test -- --coverage
